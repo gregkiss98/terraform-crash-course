@@ -3,14 +3,14 @@ provider "aws" {
 }
 
 resource "aws_vpc" "myvpc" {
-    cidr_block = "192.168.0.0/24"
+  cidr_block = "192.168.0.0/24"
 
-    tags = {
-      Name = var.VPC_Name
-    }
+  tags = {
+    Name = var.VPC_Name
+  }
 }
 
 variable "VPC_Name" {
-  type = string
+  type    = string
   default = "TerraformVPC"
 }

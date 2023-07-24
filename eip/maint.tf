@@ -3,8 +3,8 @@ provider "aws" {
 }
 
 resource "aws_instance" "ec2" {
-    ami = "ami-07ce6ac5ac8a0ee6f"
-    instance_type = "t2.micro"
+  ami           = "ami-07ce6ac5ac8a0ee6f"
+  instance_type = "t2.micro"
 }
 
 resource "aws_eip" "elasticeip" {
@@ -12,5 +12,5 @@ resource "aws_eip" "elasticeip" {
 }
 
 output "EIP" {
-  value =aws_eip.elasticeip.public_ip
+  value = aws_eip.elasticeip.public_ip
 }
