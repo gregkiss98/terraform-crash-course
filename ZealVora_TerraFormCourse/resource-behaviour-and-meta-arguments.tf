@@ -11,9 +11,20 @@ You changed something manually on a resource, you want to keep it so "apply" sho
 
 Example:
 lifecycle {
-    ignore_changers = [ tags ]
+    ignore_changes = [ tags ]
 } #terraform will ignore changes to tags
 
 Meta-Arguments: depends_on, count, for_each, lifecycle, provider
+
+Lifecycle Arguments:
+- create_before_destroy: new replacement object is created first, then it is destroyed (true or false)
+- prevent_destroy: Terraform to reject with an error any plan that would destroy the infra object associated with the resource (true or false)
+    - this can be used as a mesure of safety against the accidental replacement of resource that maybe constly to reproduce (database for example)
+    - if you remove the whole config block, it won't save you 
+- ignore_changes: ignore changes to the live resource that does not match config
+    - this is a list
+    - 'all' keyword can be used (can create or destroy, but will never update it)
+- replace_triggered_by: replaces the resource when ayn of the referenced items change
+
 */
 
