@@ -1,5 +1,5 @@
 resource "aws_security_group" "demo_sg" {
-  name        = "sample-sg"
+  name = "sample-sg"
 
   ingress {
     from_port   = 8200

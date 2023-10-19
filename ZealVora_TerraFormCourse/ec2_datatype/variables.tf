@@ -1,6 +1,6 @@
 variable "usernumber" {
-    type = number //explicitly set the type of the variable
-    /*
+  type = number //explicitly set the type of the variable
+  /*
         other types are:
         string, list, map, number
         list: ["mumbai", "budapest", asd"]
@@ -9,13 +9,13 @@ variable "usernumber" {
 }
 
 variable "elb_name" {
-    type = string
+  type = string
 }
 
 variable "az" {
-    type = list
+  type = list(any)
 }
 
 variable "timeout" {
-    type = number
+  type = number
 }

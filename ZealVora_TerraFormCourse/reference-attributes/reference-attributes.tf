@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = "eu-central-1"
+  region = "eu-central-1"
 }
 
 //create Elastic IP
@@ -14,11 +14,11 @@ resource "aws_security_group" "mySecurityGroup" {
 
 
   ingress {
-    description      = "TLS from VPC"
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks = [ "${aws_eip.myEIP.public_ip}/32" ] //reference myEIP public address. It needs '"{}"/32' because it would throw an error.
+    description = "TLS from VPC"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["${aws_eip.myEIP.public_ip}/32"] //reference myEIP public address. It needs '"{}"/32' because it would throw an error.
   }
 
   egress {

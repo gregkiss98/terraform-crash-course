@@ -1,11 +1,11 @@
 provider "aws" {
-  region     = "eu-central-1"
+  region = "eu-central-1"
 }
 
 resource "aws_iam_user" "lb" {
-  name = "demo-user.${count.index}"
+  name  = "demo-user.${count.index}"
   count = 3
-  path = "/system/"
+  path  = "/system/"
 }
 
 output "arns" {
